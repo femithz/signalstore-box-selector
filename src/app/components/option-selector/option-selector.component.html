@@ -1,29 +1,33 @@
 <div class="options-container">
   <div class="category">
     <h4>Front salto's:</h4>
-    <button
-      *ngFor="let option of frontSaltoOptions"
-      [class.selected]="option === selectedOption"
-      (click)="selectOption(option)">
-      {{ option }}
-    </button>
+    @for(option of frontSaltoOptions; track option) {
+      <button
+        [class.selected]="option === selectedOption"
+        (click)="selectOption(option)">
+        {{ option }}
+      </button>
+    }
   </div>
   <div class="category">
     <h4>Back salto's:</h4>
-    <button
-      *ngFor="let option of backSaltoOptions"
-      (click)="selectOption(option)"
-      [class.selected]="option === selectedOption">
-      {{ option }}
-    </button>
+    @for(option of backSaltoOptions; track option) {
+      <button
+        (click)="selectOption(option)"
+        [class.selected]="option === selectedOption">
+        {{ option }}
+      </button>
+    }
   </div>
   <div class="category">
     <h4>Other:</h4>
-    <button
-      *ngFor="let option of otherOptions"
-      (click)="selectOption(option)"
-      [class.selected]="option === selectedOption">
-      {{ option }}
-    </button>
+    @for(option of otherOptions; track option) {
+      <button
+        (click)="selectOption(option)"
+        [class.selected]="option === selectedOption">
+        {{ option }}
+      </button>
+    }
+
   </div>
 </div>
