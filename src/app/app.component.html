@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <header class="header">
+    <div class="logo">
+      Acro Companion
+    </div>
+    <div class="header-links">
+      @if(selectedBox()) {
+      <div class="total">
+        Total value: {{ stateService.totalValue() }}
+      </div>
+      }
+    </div>
+  </header>
+  <section class="container">
+    <h1 class="page-title">Interactive Box Selection 📦</h1>
+    <p class="page-subtitle">
+      10 interactive behavioral module boxes with option selectors.
+    </p>
+    <div class="boxes">
+      @for(box of boxes(); track box) {
+      <app-box
+        [box]="box"
+        [isSelected]="box.id === selectedBox()?.id"
+        (boxSelected)="onBoxSelected($event)">
+      </app-box>
+      }
+    </div>
+  </section>
+  <section>
+    <app-option-selector
+      *ngIf="selectedBox()"
+      [frontSaltoOptions]="frontSaltoOptions()"
+      [backSaltoOptions]="backSaltoOptions()"
+      [otherOptions]="otherOptions()"
+      [selectedOption]="selectedBox()?.selectedOption || null"
+      (optionSelected)="onOptionSelected($event)">
+    </app-option-selector>
+    <div class="button-section">
+      @if(selectedBox()) {
+      <button
+        class=""
+        (click)="clearSelections()">
+        Clear All
+      </button>
+      }
+    </div>
+  </section>
+</div>

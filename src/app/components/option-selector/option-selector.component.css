@@ -1,0 +1,25 @@
+.options-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.category {
+  flex: 1;
+  margin: 0 10px;
+}
+button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 8px;
+}
+button.selected {
+  background-color: #f28230;
+  color: #000;
+  border-color: #0056b3;
+}
+button:hover {
+  background: #e0e0e0;
+}

@@ -1,0 +1,7 @@
+<div
+  class="box"
+  [class.selected]="isSelected"
+  (click)="onBoxSelected()">
+  {{ box.id }} <br />
+  <span>{{ box.selectedOption || 'Select element' }}</span>
+</div>

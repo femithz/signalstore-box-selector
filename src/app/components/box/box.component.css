@@ -1,0 +1,21 @@
+
+.box {
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  background-color:  #34044f;;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 20px;
+}
+.box:hover {
+  background-color: #fff;
+  color: #220335;
+  opacity: .8;
+}
+.box.selected {
+  background-color: #fff;
+  color: #220335;
+}
