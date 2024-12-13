@@ -1,33 +1,33 @@
 <div class="options-container">
   <div class="category">
     <h4>Front salto's:</h4>
-    @for(option of frontSaltoOptions; track option) {
+    @for(option of stateService.frontSaltoOptions(); track option) {
       <button
-        [class.selected]="option === selectedOption"
-        (click)="selectOption(option)">
+        (click)="stateService.onOptionSelected(option)"
+        [class.selected]="stateService.selectedOption()?.selectedOption === option"
+        >
         {{ option }}
       </button>
     }
   </div>
   <div class="category">
     <h4>Back salto's:</h4>
-    @for(option of backSaltoOptions; track option) {
+    @for(option of stateService.backSaltoOptions(); track option) {
       <button
-        (click)="selectOption(option)"
-        [class.selected]="option === selectedOption">
+        (click)="stateService.onOptionSelected(option)"
+        [class.selected]="stateService.selectedOption()?.selectedOption === option">
         {{ option }}
       </button>
     }
   </div>
   <div class="category">
     <h4>Other:</h4>
-    @for(option of otherOptions; track option) {
+    @for(option of stateService.otherOptions(); track option) {
       <button
-        (click)="selectOption(option)"
-        [class.selected]="option === selectedOption">
+        (click)="stateService.onOptionSelected(option)"
+        [class.selected]="stateService.selectedOption()?.selectedOption === option">
         {{ option }}
       </button>
     }
-
   </div>
 </div>

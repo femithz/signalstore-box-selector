@@ -1,4 +1,9 @@
-
+.boxes {
+  gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 auto;
+}
 .box {
   display: block;
   text-align: center;

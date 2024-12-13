@@ -29,12 +29,7 @@ header {
   font-style: normal;
   font-weight: 700;
 }
-.boxes {
-  gap: 5px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin: 0 auto;
-}
+
 .page-title {
   color: #fff;
   font-style: normal;

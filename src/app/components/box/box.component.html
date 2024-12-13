@@ -1,7 +1,11 @@
-<div
-  class="box"
-  [class.selected]="isSelected"
-  (click)="onBoxSelected()">
-  {{ box.id }} <br />
-  <span>{{ box.selectedOption || 'Select element' }}</span>
+<div class="boxes">
+      @for(box of stateService.boxes(); track box) {
+            <div
+              class="box"
+              [class.selected]="stateService.selectedBox()?.id === box.id"
+              (click)="stateService.selectBox(box.id)">
+              {{ box.id }} <br />
+              <span>{{ box.selectedOption || 'Select element' }}</span>
+            </div>
+      }
 </div>

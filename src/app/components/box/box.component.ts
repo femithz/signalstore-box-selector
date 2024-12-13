@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter, Signal } from '@angular/core';
-import { Box } from "../../models/box.model";
+import { Component } from '@angular/core';
+import { StateService } from "../../services/state.service";
 @Component({
   selector: 'app-box',
   standalone: true,
@@ -8,10 +8,6 @@ import { Box } from "../../models/box.model";
   styleUrls: ['./box.component.css']
 })
 export class BoxComponent {
-  @Input({ required: true }) box!: Box;
-  @Input({ required: true }) isSelected!: boolean;
-  @Output() boxSelected = new EventEmitter<number>();
-  onBoxSelected() {
-    this.boxSelected.emit(this.box.id);
+  constructor(public stateService: StateService) {
   }
 }

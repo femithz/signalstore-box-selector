@@ -4,10 +4,10 @@
       Acro Companion
     </div>
     <div class="header-links">
-      @if(selectedBox()) {
-      <div class="total">
-        Total value: {{ stateService.totalValue() }}
-      </div>
+      @if(stateService.selectedBox()) {
+          <div class="total">
+            Total value: {{ stateService.totalValue() }}
+          </div>
       }
     </div>
   </header>
@@ -16,30 +16,17 @@
     <p class="page-subtitle">
       10 interactive behavioral module boxes with option selectors.
     </p>
-    <div class="boxes">
-      @for(box of boxes(); track box) {
-      <app-box
-        [box]="box"
-        [isSelected]="box.id === selectedBox()?.id"
-        (boxSelected)="onBoxSelected($event)">
-      </app-box>
-      }
-    </div>
+    <app-box></app-box>
   </section>
   <section>
     <app-option-selector
-      *ngIf="selectedBox()"
-      [frontSaltoOptions]="frontSaltoOptions()"
-      [backSaltoOptions]="backSaltoOptions()"
-      [otherOptions]="otherOptions()"
-      [selectedOption]="selectedBox()?.selectedOption || null"
-      (optionSelected)="onOptionSelected($event)">
+      *ngIf="stateService.selectedBox()">
     </app-option-selector>
     <div class="button-section">
-      @if(selectedBox()) {
+      @if(stateService.selectedBox()) {
       <button
         class=""
-        (click)="clearSelections()">
+        (click)="stateService.clearSelections()">
         Clear All
       </button>
       }
