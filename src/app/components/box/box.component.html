@@ -1,11 +1,12 @@
 <div class="boxes">
-      @for(box of stateService.boxes(); track box) {
+      @for(box of store.boxes(); track box.id; let index = $index) {
             <div
               class="box"
-              [class.selected]="stateService.selectedBox()?.id === box.id"
-              (click)="stateService.selectBox(box.id)">
-              {{ box.id }} <br />
-              <span>{{ box.selectedOption || 'Select element' }}</span>
+              [class.selected]="store.selectedBox()?.id === box?.id"
+              (click)="store.selectBox(box.id)"
+             >
+              {{ box?.id }} <br />
+              <span>{{ box?.selectedOption || 'Select element' }}</span>
             </div>
       }
 </div>

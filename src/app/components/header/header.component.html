@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="logo">
+    Acro Companion
+  </div>
+  <div class="header-links">
+    @if(store.selectedBox()) {
+      <div class="total">
+        Total value: {{ store.totalValue() }}
+      </div>
+    }
+  </div>
+</header>

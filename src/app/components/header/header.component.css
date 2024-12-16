@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom:  #d6d6d6;
+}
+.header .logo {
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+}

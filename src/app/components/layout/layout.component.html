@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <app-header></app-header>
+  <section class="container">
+    <h1 class="page-title">Interactive Box Selection 📦</h1>
+    <p class="page-subtitle">
+      10 interactive behavioral module boxes with option selectors.
+    </p>
+    <app-box></app-box>
+  </section>
+  <section>
+    @if(store.selectedBox()) {
+      <app-option-selector>
+      </app-option-selector>
+    }
+    <div class="button-section">
+      @if(store.selectedBox()) {
+        <button
+          class=""
+          (click)="store.clearSelections()">
+          Clear All
+        </button>
+      }
+    </div>
+  </section>
+</div>
+
