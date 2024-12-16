@@ -10,6 +10,4 @@ import {Box} from "../../models/box.model";
 })
 export class BoxComponent {
   store = inject(BoxesStore);
-  constructor() {
-  }
 }

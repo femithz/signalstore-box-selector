@@ -10,5 +10,4 @@ import {BoxesStore} from "../../store/state.store";
 })
 export class OptionSelectorComponent {
   store = inject(BoxesStore);
-  constructor() {}
 }
